@@ -17,7 +17,7 @@
 		 		"APIKey": "6874ad7c7c10403396811780aef9ecf3"		
 			} 
 		}		
-		console.log(product);
+
 		// Supported payment methods
 		let supportedInstruments = [
 			{
@@ -190,7 +190,7 @@
 	        } else {
 	            credentials = payload.details.paymentCredential["3DS"];
 	        }
-	        
+
 	        let url = 'https://api.samsungpaydev.us/papi/v1/transactions';
 	        console.log(url);
 

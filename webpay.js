@@ -146,7 +146,7 @@
 		  };
 		  
 		  console.log(paymentData);
-		  processPayment(paymentResponse, finalCost).then(function(success) {
+		  processPayment(paymentResponse, details['total']['amount']['value']).then(function(success) {
 		  	console.log(success);
 		  	if (success) {
 					// Call complete to hide payment sheet

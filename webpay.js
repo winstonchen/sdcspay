@@ -233,6 +233,7 @@
 	        });
 	    });        
 	}
+	/*
 	let button = document.getElementById('payButton');
 	if (!window.PaymentRequest) {
 		// PaymentRequest API is not available. Forwarding to
@@ -251,4 +252,5 @@
 		}];
 		setup(item,price);
 	}
+	*/
 })();

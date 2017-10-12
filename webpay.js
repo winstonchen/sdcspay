@@ -2,38 +2,10 @@
 	function setup(item,total) {
 		// set product id based on option selected in drop down
 		let discount = 5.00;
-		let product = {}; 
-		let serverSwitch = $('#serverSwitch').val();
-	 	switch(serverSwitch){
-			case 'stripe':
-				product['id'] = 'c8e2edebcab74d8bb76658';
-				break;
-			case 'fd-sim-prd':
-				product['id'] = '7c1a34644e774837bc44b1';
-				break;
-			case 'fd-cat-prd':
-				product['id'] = 'd947c71eac094f09b395a4';
-				break;
-			case 'stripe-prd':
-				product['id'] = 'a433362c57254be7b79a08';
-				break;
-			case 'stg-sim-prd':
-				product['id'] = '99599f416a1b4cff88a5b7';
-				break;
-			case 'stg-cat-prd':
-				product['id'] = '2bc3e6da781e4e458b18bc';
-				break;
-			case 'elmo':
-				product['id'] = '99599f416a1b4cff88a5b7';
-				break;
-			default:
-				product['id'] = '7c1a34644e774837bc44b1';
-				break;
-		}
 		 //data to be used alongside spay
 		let payData = {		
 			//product ID obtained from Samsung onboarding portal		
-			'productId': product['id'],	
+			'productId': "99599f416a1b4cff88a5b7",	
 			'allowedCardNetworks': ['AMEX', 'mastercard', 'visa'],		
 			'orderNumber': "1233123",		
 			'merchantName': 'Shop Samsung (demo)',		
@@ -219,27 +191,13 @@
 	            credentials = payload.details.paymentCredential["3DS"];
 	        }
 	        
-	        //setup correct url and mid for specific values of dropdown
-	        let server = {};
-	        let serverSwitch = $('#serverSwitch').val();
-	        if(serverSwitch === 'staging'){
-	            server['mid'] = '2cae108f-c342-4a79-b8f9-bb524112ab17';
-	            server['url'] = '/papi/v1/transactions';
-	        } else if (serverSwitch === 'production') {
-	            server['mid'] = '9a75435d-2535-4284-a8c9-cb249860d403';
-	            server['url'] = '/pcat/v1/transactions';
-	        } else if(serverSwitch === 'stripe') {
-	            server['mid'] = '18cb7fde-5321-4dba-b9ee-13a49e172f7c';
-		        server['url'] = '/papi/v1/transactions';
-	        } else {
-		    }
-	        let url = 'https://api.samsungpaydev.us' + server['url'];
+	        let url = 'https://api.samsungpaydev.us/papi/v1/transactions';
 	        console.log(url);
 
 	        //payment data sent to server
 	        let postPayment = { 
 	            "request_id": guid(),
-	            "mid": server['mid'],
+	            "mid": '2cae108f-c342-4a79-b8f9-bb524112ab17',
 	            "txn_type": "PURCHASE",
 	            "method": "3ds",
 	            "currency": "USD",

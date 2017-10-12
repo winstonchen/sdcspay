@@ -5,6 +5,9 @@
 }
 
 .button {
+	color: #FFFFFF;
+	text-align: center;
+	/*
 	margin: auto;
 	width: 200px;
 	height: 45px;
@@ -15,4 +18,5 @@
 	text-align: center;
 	padding-top:10px;
 	border-radius: 10px;
+	*/
 }
